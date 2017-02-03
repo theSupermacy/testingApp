@@ -25,11 +25,15 @@ export default class testApp extends Component {
   sendNativeCrash(){
     Crashes.generateTestCrash();
   }
+  sendJSCrash() {
+    throw "this is sparta"
+  }
   render() {
     return (
       <View style={styles.container}>
           <Button title="Send Event" onPress ={()=>{this.sendEvent()}}/>
           <Button title="Send Native Crashes" onPress ={()=>{this.sendNativeCrash()}}/>
+          <Button title="Send JS Crashes" onPress ={()=>{this.sendJSCrash()}}/>
       </View>
     );
   }
